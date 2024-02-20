@@ -1,8 +1,6 @@
 const isURL = require("./isURL");
 
 module.exports = async function (url) {
-  if (!url) return false;
-
   if (!isURL(url)) return false;
 
   try {

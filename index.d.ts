@@ -9,7 +9,13 @@ declare module "useful-functs" {
    * Validates if a URL is an image.
    * @param url The URL to verify.
    */
-  export function isImageURL(url: string): Promise<boolean>;
+  export function isImageURL(url: string): Promise<boolean | null>;
+
+  /**
+   * Gets the content type of a given URL.
+   * @param url The URL from which you want to get the content type.
+   */
+  export function getType(url: string): Promise<string | null>;
 }
 
 interface Array<T> {
