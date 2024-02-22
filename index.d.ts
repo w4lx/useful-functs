@@ -15,7 +15,13 @@ declare module "useful-functs" {
    * Gets the content type of a given URL.
    * @param url The URL from which you want to get the content type.
    */
-  export function getType(url: string): Promise<string | null>;
+  export function getType(url: string): Promise<Response>;
+
+  export interface Response {
+    type: string | undefined;
+    ext: string | undefined;
+    mimetype: string | null;
+  }
 }
 
 interface Array<T> {

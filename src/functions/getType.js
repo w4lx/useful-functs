@@ -6,9 +6,13 @@ module.exports = async function (url) {
 
     const { headers } = await fetch(url);
 
-    const type = headers.get("Content-Type");
+    const mimetype = headers.get("Content-Type");
 
-    return type;
+    return {
+      type: mimetype?.split("/")[0],
+      ext: mimetype?.split("/")[1],
+      mimetype,
+    };
   } catch (error) {
     console.error(error);
     return null;
