@@ -1,0 +1,21 @@
+{
+  "name": "useful-functs",
+  "version": "1.1.0",
+  "description": "Functions that could be useful in your projects.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "src/index.js",
+    "test": "node index.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/w4lx/useful-functs.git"
+  },
+  "author": "Walx",
+  "license": "ISC",
+  "keywords": [
+    "utilities",
+    "tools",
+    "functions"
+  ]
+}
