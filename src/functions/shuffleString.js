@@ -1,4 +1,4 @@
-module.exports = function shuffleString(str, removeSpaces = false) {
+module.exports = function (str, removeSpaces = false) {
   if (!str || typeof str !== "string") {
     throw new Error("The 'str' parameter is missing or empty.");
   }
