@@ -1,14 +1,12 @@
-module.exports = function (array) {
+module.exports = function shuffleArray(array) {
   if (!array || !Array.isArray(array) || !array.length) {
     throw new Error("The input must be a non-empty array.");
   }
 
-  const copy = [...array];
-
-  for (let i = copy.length - 1; i > 0; i--) {
+  for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [copy[i], copy[j]] = [copy[j], copy[i]];
+    [array[i], array[j]] = [array[j], array[i]];
   }
 
-  return copy;
+  return array;
 };

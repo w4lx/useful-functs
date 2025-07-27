@@ -7,13 +7,18 @@ declare module "useful-functs" {
   export function isURL(str: string): boolean;
 
   /**
-   * Checks whether a given URL points to a valid image resource.
-   *
-   * @param url - The URL to verify.
-   * @param timeout - Optional timeout in milliseconds (default: 5000).
-   * @returns A Promise that resolves to true if the URL is a valid image, false otherwise.
+   * Validates if a URL is an image.
+   * @param url The URL to verify.
+   * @returns A Promise that resolves to true if the URL is an image, false otherwise.
    */
-  export function isImageURL(url: string, timeout?: number): Promise<boolean>;
+  export function isImageURL(url: string): Promise<boolean>;
+
+  /**
+   * Gets the content type of a given URL.
+   * @param url The URL from which you want to get the content type.
+   * @returns A Promise that resolves to a Response object containing type information, or undefined.
+   */
+  export function getType(url: string): Promise<Response | undefined>;
 
   /**
    * Shuffles the elements of an Array randomly.
@@ -42,4 +47,13 @@ declare module "useful-functs" {
     limit: number,
     suffix?: string
   ): string;
+
+  /**
+   * Response object containing type information.
+   */
+  export interface Response {
+    type: string;
+    ext: string;
+    mimetype: string;
+  }
 }
